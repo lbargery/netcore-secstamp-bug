@@ -21,6 +21,8 @@ builder.Services.AddControllersWithViews();
 //    IterationCount = 200000
 //})));
 
+builder.Services.Configure<SecurityStampValidatorOptions>(options => options.ValidationInterval = TimeSpan.FromSeconds(60));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
