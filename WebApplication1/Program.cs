@@ -15,10 +15,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IPasswordHasher<IdentityUser>>(s => new PasswordHasher<IdentityUser>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions()
-{
-    IterationCount = 200000
-})));
+//Uncomment this on second run!
+//builder.Services.AddScoped<IPasswordHasher<IdentityUser>>(s => new PasswordHasher<IdentityUser>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions()
+//{
+//    IterationCount = 200000
+//})));
 
 var app = builder.Build();
 
